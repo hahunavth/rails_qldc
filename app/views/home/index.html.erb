@@ -1,0 +1,9 @@
+<h1>
+  Home#tabindex
+</h1>
+<div class="">
+  <% if Current.user %>
+    User:   <%= Current.user.name %>
+    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+  <% end %>
+</div>
