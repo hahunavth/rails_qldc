@@ -1,0 +1,2 @@
+class NguoiDan < ApplicationRecord
+end

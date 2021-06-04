@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nguoi Dans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ten</th>
+      <th>Biet danh</th>
+      <th>So cmnd</th>
+      <th>So ho khau</th>
+      <th>So ho chieu</th>
+      <th>Qh voi chu ho</th>
+      <th>Ngay sinh</th>
+      <th>Gioi tinh</th>
+      <th>Noi sinh</th>
+      <th>Ngyen quan</th>
+      <th>Dan toc</th>
+      <th>Ton giao</th>
+      <th>Quoc tich</th>
+      <th>Noi thuong tru</th>
+      <th>Nghe nghiep</th>
+      <th>Noi lam viec</th>
+      <th>Trinh do hoc van</th>
+      <th>Trinh do ngoai ngu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nguoi_dans.each do |nguoi_dan| %>
+      <tr>
+        <td><%= nguoi_dan.ten %></td>
+        <td><%= nguoi_dan.biet_danh %></td>
+        <td><%= nguoi_dan.so_cmnd %></td>
+        <td><%= nguoi_dan.so_ho_khau %></td>
+        <td><%= nguoi_dan.so_ho_chieu %></td>
+        <td><%= nguoi_dan.qh_voi_chu_ho %></td>
+        <td><%= nguoi_dan.ngay_sinh %></td>
+        <td><%= nguoi_dan.gioi_tinh %></td>
+        <td><%= nguoi_dan.noi_sinh %></td>
+        <td><%= nguoi_dan.ngyen_quan %></td>
+        <td><%= nguoi_dan.dan_toc %></td>
+        <td><%= nguoi_dan.ton_giao %></td>
+        <td><%= nguoi_dan.quoc_tich %></td>
+        <td><%= nguoi_dan.noi_thuong_tru %></td>
+        <td><%= nguoi_dan.nghe_nghiep %></td>
+        <td><%= nguoi_dan.noi_lam_viec %></td>
+        <td><%= nguoi_dan.trinh_do_hoc_van %></td>
+        <td><%= nguoi_dan.trinh_do_ngoai_ngu %></td>
+        <td><%= link_to 'Show', nguoi_dan, class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Edit', edit_nguoi_dan_path(nguoi_dan), class: 'btn btn-outline-warning' %></td>
+        <td><%= link_to 'Destroy', nguoi_dan, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-outline-danger'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nguoi Dan', new_nguoi_dan_path %>

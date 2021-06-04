@@ -1,0 +1,107 @@
+<%= form_with(model: nguoi_dan) do |form| %>
+  <% if nguoi_dan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nguoi_dan.errors.count, "error") %> prohibited this nguoi_dan from being saved:</h2>
+
+      <ul>
+        <% nguoi_dan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :ten, class: 'form-label' %>
+    <%= form.text_field :ten, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :biet_danh, class: 'form-label' %>
+    <%= form.text_field :biet_danh, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :so_cmnd, class: 'form-label' %>
+    <%= form.text_field :so_cmnd, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :so_ho_khau, class: 'form-label' %>
+    <%= form.text_field :so_ho_khau, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :so_ho_chieu, class: 'form-label' %>
+    <%= form.text_field :so_ho_chieu, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :qh_voi_chu_ho, class: 'form-label' %>
+    <%= form.text_field :qh_voi_chu_ho, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :ngay_sinh, class: 'form-label' %>
+    <%= form.date_select :ngay_sinh, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :gioi_tinh, class: 'form-label' %>
+    <%= form.text_field :gioi_tinh, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :noi_sinh, class: 'form-label' %>
+    <%= form.text_field :noi_sinh, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :ngyen_quan, class: 'form-label' %>
+    <%= form.text_field :ngyen_quan, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :dan_toc, class: 'form-label' %>
+    <%= form.text_field :dan_toc, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :ton_giao, class: 'form-label' %>
+    <%= form.text_field :ton_giao, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :quoc_tich, class: 'form-label' %>
+    <%= form.text_field :quoc_tich, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :noi_thuong_tru, class: 'form-label' %>
+    <%= form.text_field :noi_thuong_tru, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :nghe_nghiep, class: 'form-label' %>
+    <%= form.text_field :nghe_nghiep, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :noi_lam_viec, class: 'form-label' %>
+    <%= form.text_field :noi_lam_viec, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :trinh_do_hoc_van, class: 'form-label' %>
+    <%= form.text_field :trinh_do_hoc_van, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :trinh_do_ngoai_ngu, class: 'form-label' %>
+    <%= form.text_field :trinh_do_ngoai_ngu, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary'%>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :nguoi_dans
   get 'main/index'
 
   get 'sign_up', to: 'user#sign_up'
