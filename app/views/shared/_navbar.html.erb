@@ -10,23 +10,26 @@
           <%= link_to "Home", home_index_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign in", sign_in_path, class: "nav-link active" %>
+          <%= link_to "Nhân khẩu", nguoi_dans_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign up", sign_up_path, class: "nav-link active" %>
+          <%= link_to "Hộ khẩu", ho_khaus_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Tạm trú", tam_trus_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Tạm vắng", tam_vangs_path, class: "nav-link active" %>
         </li>
       </ul>
-      <form class="d-flex me-5">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if Current.user %>
           <li class="nav-item">
             <%=link_to Current.user.name , password_path, method: :get, class: "nav-link"%>
           </li>
           <li class="nav-item">
-            <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-outline-danger" %>
           </li>
         <% else %>
           <li class="nav-item">

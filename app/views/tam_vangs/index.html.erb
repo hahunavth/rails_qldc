@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tam Vangs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nguoi dan</th>
+      <th>Tu ngay</th>
+      <th>Den ngay</th>
+      <th>Dia chi</th>
+      <th>Li do</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tam_vangs.each do |tam_vang| %>
+      <tr>
+        <td><%= tam_vang.nguoi_dan_id %></td>
+        <td><%= tam_vang.tu_ngay %></td>
+        <td><%= tam_vang.den_ngay %></td>
+        <td><%= tam_vang.dia_chi %></td>
+        <td><%= tam_vang.li_do %></td>
+        <td><%= link_to 'Show', tam_vang %></td>
+        <td><%= link_to 'Edit', edit_tam_vang_path(tam_vang) %></td>
+        <td><%= link_to 'Destroy', tam_vang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tam Vang', new_tam_vang_path %>

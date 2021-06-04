@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ho Khaus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ten chu ho</th>
+      <th>Dia chi</th>
+      <th>Ngay cap</th>
+      <th>Noi cap</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ho_khaus.each do |ho_khau| %>
+      <tr>
+        <td><%= ho_khau.id %></td>
+        <td>
+          <% if ho_khau.NguoiDan.present? %>
+            <%=link_to ho_khau.NguoiDan.first.ten, nguoi_dan_path(:id => ho_khau.NguoiDan.first.id)%>
+          <% else %>
+            Chưa có thành viên nào
+          <% end %>
+        </td>
+        <td><%= ho_khau.dia_chi %></td>
+        <td><%= ho_khau.ngay_cap %></td>
+        <td><%= ho_khau.noi_cap %></td>
+        <td><%= link_to 'Show', ho_khau %></td>
+        <td><%= link_to 'Edit', edit_ho_khau_path(ho_khau) %></td>
+        <td><%= link_to 'Destroy', ho_khau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ho Khau', new_ho_khau_path %>

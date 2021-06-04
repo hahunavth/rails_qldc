@@ -1,0 +1,32 @@
+<%= form_with(model: ho_khau) do |form| %>
+  <% if ho_khau.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ho_khau.errors.count, "error") %> prohibited this ho_khau from being saved:</h2>
+
+      <ul>
+        <% ho_khau.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dia_chi %>
+    <%= form.text_field :dia_chi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ngay_cap %>
+    <%= form.date_select :ngay_cap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :noi_cap %>
+    <%= form.text_field :noi_cap %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

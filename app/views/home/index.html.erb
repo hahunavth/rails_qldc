@@ -5,5 +5,12 @@
   <% if Current.user %>
     User:   <%= Current.user.name %>
     <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+  <% else %>
+    <div class="">
+      Username: 12345678
+    </div>
+    <div class="">
+      Password: 12345678
+    </div>
   <% end %>
 </div>

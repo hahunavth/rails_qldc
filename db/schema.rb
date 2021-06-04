@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_184801) do
+ActiveRecord::Schema.define(version: 2021_06_04_220253) do
+
+  create_table "ho_khaus", force: :cascade do |t|
+    t.string "dia_chi"
+    t.date "ngay_cap"
+    t.string "noi_cap"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "nguoi_dans", force: :cascade do |t|
     t.string "ten"
@@ -31,6 +39,26 @@ ActiveRecord::Schema.define(version: 2021_06_04_184801) do
     t.string "noi_lam_viec"
     t.string "trinh_do_hoc_van"
     t.string "trinh_do_ngoai_ngu"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tam_trus", force: :cascade do |t|
+    t.integer "nguoi_dan_id"
+    t.date "tu_ngay"
+    t.date "den_ngay"
+    t.string "dia_chi"
+    t.string "li_do"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tam_vangs", force: :cascade do |t|
+    t.integer "nguoi_dan_id"
+    t.date "tu_ngay"
+    t.date "den_ngay"
+    t.string "dia_chi"
+    t.string "li_do"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

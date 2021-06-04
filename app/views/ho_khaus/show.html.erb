@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dia chi:</strong>
+  <%= @ho_khau.dia_chi %>
+</p>
+
+<p>
+  <strong>Ngay cap:</strong>
+  <%= @ho_khau.ngay_cap %>
+</p>
+
+<p>
+  <strong>Noi cap:</strong>
+  <%= @ho_khau.noi_cap %>
+</p>
+
+<%= link_to 'Edit', edit_ho_khau_path(@ho_khau) %> |
+<%= link_to 'Back', ho_khaus_path %>

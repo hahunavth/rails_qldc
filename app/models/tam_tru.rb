@@ -1,0 +1,2 @@
+class TamTru < ApplicationRecord
+end

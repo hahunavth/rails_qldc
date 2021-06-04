@@ -1,0 +1,2 @@
+class TamVang < ApplicationRecord
+end

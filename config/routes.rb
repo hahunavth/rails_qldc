@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :tam_vangs
+  resources :tam_trus
+  resources :ho_khaus
   resources :nguoi_dans
+  
   get 'main/index'
 
   get 'sign_up', to: 'user#sign_up'
