@@ -18,7 +18,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pg', '~>1.4'
+  gem 'pg', '~>1.1'
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
