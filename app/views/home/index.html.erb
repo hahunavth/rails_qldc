@@ -1,16 +1,29 @@
 <h1>
-  Home#tabindex
+  Trang chủ
 </h1>
 <div class="">
   <% if Current.user %>
     User:   <%= Current.user.name %>
     <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
   <% else %>
-    <div class="">
-      Username: 12345678
-    </div>
-    <div class="">
-      Password: 12345678
+  <h3>Admin: </h3>
+  <ul>
+    <li>
+      Username: admin
+    </li>
+    <li>
+      Password: 1
+    </li>
+  </ul>
+  <h3>User: </h3>
+  <ul>
+    <li>
+      Username: 030201001123
+    </li>
+    <li>
+      Password: 1
+    </li>
+  </ul>
     </div>
   <% end %>
 </div>

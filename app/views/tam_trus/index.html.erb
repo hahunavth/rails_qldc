@@ -2,14 +2,15 @@
 
 <h1>Tam Trus</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Nguoi dan</th>
-      <th>Tu ngay</th>
-      <th>Den ngay</th>
-      <th>Dia chi</th>
-      <th>Li do</th>
+      <th>ID</th>
+      <th>Họ và tên</th>
+      <th>Từ ngày</th>
+      <th>Đến ngày</th>
+      <th>Địa chỉ</th>
+      <th>Lí do</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,13 +19,14 @@
     <% @tam_trus.each do |tam_tru| %>
       <tr>
         <td><%= tam_tru.nguoi_dan_id %></td>
+        <td><%= tam_tru.NguoiDan.ten %></td>
         <td><%= tam_tru.tu_ngay %></td>
         <td><%= tam_tru.den_ngay %></td>
         <td><%= tam_tru.dia_chi %></td>
         <td><%= tam_tru.li_do %></td>
-        <td><%= link_to 'Show', tam_tru %></td>
-        <td><%= link_to 'Edit', edit_tam_tru_path(tam_tru) %></td>
-        <td><%= link_to 'Destroy', tam_tru, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', tam_tru, class: 'btn btn-sm btn-outline-primary' %></td>
+        <td><%= link_to 'Edit', edit_tam_tru_path(tam_tru), class: 'btn btn-sm btn-outline-warning' %></td>
+        <td><%= link_to 'Destroy', tam_tru, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger px-0' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -16,7 +16,8 @@
   </thead>
 
   <tbody>
-    <% @tam_vangs.each do |tam_vang| %>
+    <% if @tam_vangs_user != nil %>
+    <% @tam_vangs_user.each do |tam_vang| %>
       <tr>
         <td><%= tam_vang.nguoi_dan_id %></td>
         <td><%= tam_vang.NguoiDan.ten %></td>
@@ -28,6 +29,7 @@
         <td><%= link_to 'Edit', edit_tam_vang_path(tam_vang), class: 'btn btn-sm btn-outline-warning' %></td>
         <td><%= link_to 'Destroy', tam_vang, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

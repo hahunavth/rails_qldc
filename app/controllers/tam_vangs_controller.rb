@@ -1,6 +1,6 @@
 class TamVangsController < ApplicationController
   before_action :require_user_logged_in!
-  
+
   before_action :set_tam_vang, only: %i[ show edit update destroy ]
 
   # GET /tam_vangs or /tam_vangs.json
@@ -67,5 +67,9 @@ class TamVangsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def tam_vang_params
       params.require(:tam_vang).permit(:nguoi_dan_id, :tu_ngay, :den_ngay, :dia_chi, :li_do)
+    end
+
+    def user_index
+      @tam_vangs_user = TamVang.where("nguoi_dan_id = ?", NguoiDan.find_by_so_cmnd(Current.user.name).id)
     end
 end

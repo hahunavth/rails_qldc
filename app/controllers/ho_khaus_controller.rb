@@ -1,7 +1,12 @@
 class HoKhausController < ApplicationController
   before_action :require_user_logged_in!
-  
+
   before_action :set_ho_khau, only: %i[ show edit update destroy ]
+
+  # Show nguoi_dans trong ho_khau
+  def show_nguoi_dan
+    @ho_khau = HoKhau.find(params[:id])
+  end
 
   # GET /ho_khaus or /ho_khaus.json
   def index

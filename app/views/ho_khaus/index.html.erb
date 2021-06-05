@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ho Khaus</h1>
+<h1>Hộ khẩu</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Ten chu ho</th>
-      <th>Dia chi</th>
-      <th>Ngay cap</th>
-      <th>Noi cap</th>
+      <th>Tên chủ hộ</th>
+      <th>Địa chỉ</th>
+      <th>Ngày cấp</th>
+      <th>Nơi cấp</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -28,9 +28,11 @@
         <td><%= ho_khau.dia_chi %></td>
         <td><%= ho_khau.ngay_cap %></td>
         <td><%= ho_khau.noi_cap %></td>
-        <td><%= link_to 'Show', ho_khau %></td>
-        <td><%= link_to 'Edit', edit_ho_khau_path(ho_khau) %></td>
-        <td><%= link_to 'Destroy', ho_khau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Xem', ho_khau, class: 'btn btn-outline-primary' %></td>
+        <td><%= link_to 'Sửa', edit_ho_khau_path(ho_khau) , class: 'btn btn-outline-warning'%></td>
+        <td><%= link_to 'Xóa', ho_khau, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-outline-danger'%></td>
+        <td><%= link_to 'Danh sách thành viên', nguoi_dans_in_ho_khau_path(ho_khau), class: 'text-wrap btn btn-outline-secondary', style: 'width: 100px; font-size: 12px'%></td>
+
       </tr>
     <% end %>
   </tbody>

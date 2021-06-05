@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_220253) do
   create_table "nguoi_dans", force: :cascade do |t|
     t.string "ten"
     t.string "biet_danh"
-    t.integer "so_cmnd"
+    t.string "so_cmnd"
     t.integer "so_ho_khau"
     t.integer "so_ho_chieu"
     t.string "qh_voi_chu_ho"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_220253) do
     t.date "den_ngay"
     t.string "dia_chi"
     t.string "li_do"
+    t.string "xac_nhan"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_220253) do
     t.date "den_ngay"
     t.string "dia_chi"
     t.string "li_do"
+    t.string "xac_nhan"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_220253) do
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "password_digest"
+    t.integer "permision"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

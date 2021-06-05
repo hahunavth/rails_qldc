@@ -58,6 +58,37 @@ class TamTrusController < ApplicationController
     end
   end
 
+  def user_index
+    @tam_trus = TamTru.all
+
+    # flash[:notice] = NguoiDan.find_by_so_cmnd('030201001122')
+    @tam_trus_users = TamTru.where("nguoi_dan_id = ?", NguoiDan.find_by_so_cmnd(Current.user.name).id)
+
+    # @name = Current.user.name
+    # @nguoi_dan = NguoiDan.find_by_so_cmnd(name)
+      # if NguoiDan.exists?(so_cmnd: Current.user.name)
+      #   @nguoi_dans = NguoiDan.find_by_so_cmnd(@name)
+      #   if TamTru.exists?(nguoi_dan_id: @nguoi_dans.id)
+      #     @tam_trus_users = TamTru.where("nguoi_dan_id = ?", @nguoi_dan.id)
+      #   end
+      # end
+    end
+
+  def user_show
+  end
+
+  def user_new
+  end
+
+  def user_create
+  end
+
+  def user_edit
+  end
+
+  def user_delete
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tam_tru

@@ -6,6 +6,7 @@ class CreateTamTrus < ActiveRecord::Migration[6.1]
       t.date :den_ngay
       t.string :dia_chi
       t.string :li_do
+      t.string :xac_nhan
 
       t.timestamps
     end

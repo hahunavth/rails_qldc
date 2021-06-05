@@ -1,0 +1,42 @@
+<%= form_with(model: tam_trus_users) do |form| %>
+  <% if tam_trus_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tam_trus_users.errors.count, "error") %> prohibited this tam_tru from being saved:</h2>
+
+      <ul>
+        <% tam_trus_users.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nguoi_dan_id %>
+    <%= form.text_field :nguoi_dan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tu_ngay %>
+    <%= form.date_select :tu_ngay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :den_ngay %>
+    <%= form.date_select :den_ngay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_chi %>
+    <%= form.text_field :dia_chi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :li_do %>
+    <%= form.text_field :li_do %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -24,7 +24,14 @@ class NguoiDansController < ApplicationController
   # POST /nguoi_dans or /nguoi_dans.json
   def create
     @nguoi_dan = NguoiDan.new(nguoi_dan_params)
-
+    #(name: @nguoi_dan.so_cmnd, password: @nguoi_dan.so_cmnd, password_confirmation: @nguoi_dan.so_cmnd)
+    # @nguoi_dan.User = User.new
+    # @nguoi_dan.User.name = @nguoi_dan.so_cmnd
+    # puts @nguoi_dan.User.name
+    # @user.password = @nguoi_dan.so_cmnd
+    # @user.password_confirmation = @nguoi_dan.so_cmnd
+    # @nguoi_dan.User.permision = 1
+    # redirect_to sign_up_path(@user)
     respond_to do |format|
       if @nguoi_dan.save
         format.html { redirect_to @nguoi_dan, notice: "Nguoi dan was successfully created." }
@@ -68,4 +75,5 @@ class NguoiDansController < ApplicationController
     def nguoi_dan_params
       params.require(:nguoi_dan).permit(:ten, :biet_danh, :so_cmnd, :so_ho_khau, :so_ho_chieu, :qh_voi_chu_ho, :ngay_sinh, :gioi_tinh, :noi_sinh, :ngyen_quan, :dan_toc, :ton_giao, :quoc_tich, :noi_thuong_tru, :nghe_nghiep, :noi_lam_viec, :trinh_do_hoc_van, :trinh_do_ngoai_ngu)
     end
+
 end

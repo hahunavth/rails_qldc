@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nguoi_dan_id %>
-    <%= form.text_field :nguoi_dan_id %>
+    <%= form.label :nguoi_dan_id, class:'col-form-label', class:'col-form-label'%>
+    <%= form.text_field :nguoi_dan_id, class:'form-control' , class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :tu_ngay %>
-    <%= form.date_select :tu_ngay %>
+    <%= form.label :tu_ngay, class:'col-form-label' %>
+    <%= form.date_select :tu_ngay , class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :den_ngay %>
-    <%= form.date_select :den_ngay %>
+    <%= form.label :den_ngay, class:'col-form-label' %>
+    <%= form.date_select :den_ngay , class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :dia_chi %>
-    <%= form.text_field :dia_chi %>
+    <%= form.label :dia_chi , class:'col-form-label'%>
+    <%= form.text_field :dia_chi , class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :li_do %>
-    <%= form.text_field :li_do %>
+    <%= form.label :li_do , class:'col-form-label'%>
+    <%= form.text_field :li_do , class:'form-control'%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-primary mt-10'%>
   </div>
 <% end %>

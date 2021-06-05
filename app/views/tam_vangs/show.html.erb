@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nguoi dan:</strong>
-  <%= @tam_vang.nguoi_dan_id %>
-</p>
 
-<p>
-  <strong>Tu ngay:</strong>
-  <%= @tam_vang.tu_ngay %>
-</p>
 
-<p>
-  <strong>Den ngay:</strong>
-  <%= @tam_vang.den_ngay %>
-</p>
+<div class="list-group">
+  <p class='list-group-item mb-0'>
+    <strong>Nguoi dan:</strong>
+    <%= @tam_vang.nguoi_dan_id %>
+  </p>
 
-<p>
-  <strong>Dia chi:</strong>
-  <%= @tam_vang.dia_chi %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Tu ngay:</strong>
+    <%= @tam_vang.tu_ngay %>
+  </p>
 
-<p>
-  <strong>Li do:</strong>
-  <%= @tam_vang.li_do %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Den ngay:</strong>
+    <%= @tam_vang.den_ngay %>
+  </p>
+
+  <p class='list-group-item mb-0'>
+    <strong>Dia chi:</strong>
+    <%= @tam_vang.dia_chi %>
+  </p>
+
+  <p class='list-group-item mb-0'>
+    <strong>Li do:</strong>
+    <%= @tam_vang.li_do %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_tam_vang_path(@tam_vang) %> |
 <%= link_to 'Back', tam_vangs_path %>

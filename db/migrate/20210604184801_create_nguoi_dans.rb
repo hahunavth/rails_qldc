@@ -3,7 +3,7 @@ class CreateNguoiDans < ActiveRecord::Migration[6.1]
     create_table :nguoi_dans do |t|
       t.string :ten
       t.string :biet_danh
-      t.integer :so_cmnd
+      t.string :so_cmnd
       t.integer :so_ho_khau
       t.integer :so_ho_chieu
       t.string :qh_voi_chu_ho
