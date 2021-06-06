@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nguoi dan:</strong>
+  <%= @tam_vang.nguoi_dan_id %>
+</p>
+
+<p>
+  <strong>Tu ngay:</strong>
+  <%= @tam_vang.tu_ngay %>
+</p>
+
+<p>
+  <strong>Den ngay:</strong>
+  <%= @tam_vang.den_ngay %>
+</p>
+
+<p>
+  <strong>Dia chi:</strong>
+  <%= @tam_vang.dia_chi %>
+</p>
+
+<p>
+  <strong>Li do:</strong>
+  <%= @tam_vang.li_do %>
+</p>
+
+<%= link_to 'Edit', user_edit_tam_vang_path(@tam_vang) %> |
+<%= link_to 'Back', user_dang_ky_tam_vang_path %>

@@ -1,9 +1,9 @@
-<%= form_with(model: tam_tru) do |form| %>
-  <% if tam_tru.errors.any? %>
+<%= form_with(model: tam_vang) do |form| %>
+  <% if tam_vang.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(tam_tru.errors.count, "error") %> prohibited this tam_tru from being saved:</h2>
+      <h2><%= pluralize(tam_vang.errors.count, "error") %> prohibited this tam_vang from being saved:</h2>
       <ul>
-        <% tam_tru.errors.each do |error| %>
+        <% tam_vang.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

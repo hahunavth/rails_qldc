@@ -1,7 +1,7 @@
 class TamVangsController < ApplicationController
   before_action :require_user_logged_in!
 
-  before_action :set_tam_vang, only: %i[ show edit update destroy ]
+  before_action :set_tam_vang, only: %i[ show edit update destroy user_show user_edit]
 
   # GET /tam_vangs or /tam_vangs.json
   def index
@@ -27,7 +27,11 @@ class TamVangsController < ApplicationController
 
     respond_to do |format|
       if @tam_vang.save
-        format.html { redirect_to @tam_vang, notice: "Tam vang was successfully created." }
+        if Current.user.permision == 0
+          format.html { redirect_to @tam_vang, notice: "Tam vang was successfully created." }
+        else
+          format.html { redirect_to user_show_tam_vang_url(@tam_vang), notice: "Tam tru was successfully created." }
+        end
         format.json { render :show, status: :created, location: @tam_vang }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +44,11 @@ class TamVangsController < ApplicationController
   def update
     respond_to do |format|
       if @tam_vang.update(tam_vang_params)
-        format.html { redirect_to @tam_vang, notice: "Tam vang was successfully updated." }
+        if Current.user.permision == 0
+          format.html { redirect_to @tam_vang, notice: "Tam vang was successfully updated." }
+        else
+          format.html { redirect_to user_show_tam_vang_url(@tam_vang), notice: "Tam tru was successfully updated." }
+        end
         format.json { render :show, status: :ok, location: @tam_vang }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,9 +61,29 @@ class TamVangsController < ApplicationController
   def destroy
     @tam_vang.destroy
     respond_to do |format|
-      format.html { redirect_to tam_vangs_url, notice: "Tam vang was successfully destroyed." }
+      if Current.user.permision == 0
+        format.html { redirect_to tam_vangs_url, notice: "Tam vang was successfully destroyed." }
+      else
+        format.html { redirect_to user_dang_ky_tam_vang_url, notice: "Tam tru was successfully destroyed." }
+      end
       format.json { head :no_content }
     end
+  end
+
+  def user_index
+    @tam_vangs = TamVang.where("nguoi_dan_id = ?", NguoiDan.find_by_so_cmnd(Current.user.name).id)
+  end
+
+  def user_show
+  end
+
+  def user_new
+    @tam_vang = TamVang.new
+    @tam_vang.nguoi_dan_id = NguoiDan.find_by_so_cmnd(Current.user.name).id
+  end
+
+
+  def user_edit
   end
 
   private
@@ -66,10 +94,6 @@ class TamVangsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tam_vang_params
-      params.require(:tam_vang).permit(:nguoi_dan_id, :tu_ngay, :den_ngay, :dia_chi, :li_do)
-    end
-
-    def user_index
-      @tam_vangs_user = TamVang.where("nguoi_dan_id = ?", NguoiDan.find_by_so_cmnd(Current.user.name).id)
+      params.require(:tam_vang).permit(:nguoi_dan_id, :tu_ngay, :den_ngay, :dia_chi, :li_do, :xac_nhan)
     end
 end

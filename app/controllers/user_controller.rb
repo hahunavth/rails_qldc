@@ -21,16 +21,16 @@ class UserController < ApplicationController
       @user.permision = 0
     end
     if !User.where('name = ?', @user.name).any?
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_path , notice: "Successfully create acount"
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to root_path , notice: "Successfully create acount"
+      else
+        # flash[:alert] = "Something was wrong"
+        render :sign_up
+      end
     else
-      # flash[:alert] = "Something was wrong"
-      render :sign_up
+      flash[:alert] = 'Account is exists'
     end
-  else
-    flash[:alert] = 'Account is exists'
-  end
   end
 
 private
@@ -51,7 +51,8 @@ end
 #     if NguoiDan.exists?(:so_cmnd => @user.name)
 #     @nguoi_dan = NguoiDan.find_by(:so_cmnd => @user.name)
 #       if @nguoi_dan.present?
-#         @tam_trus = TamTru.find_by(nguoi_dan_id: @nguoi_dan.id)
+#         @tam_trus = TamTru.ficlass UserController < ApplicationController
+
 #       end
 #     end
 #   end

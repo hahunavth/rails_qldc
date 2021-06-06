@@ -2,7 +2,6 @@
   <% if tam_tru.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(tam_tru.errors.count, "error") %> prohibited this tam_tru from being saved:</h2>
-
       <ul>
         <% tam_tru.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -36,7 +35,18 @@
     <%= form.text_field :li_do %>
   </div>
 
+  <div class="field">
+    <%= form.label :xac_nhan %>
+    <%= form.text_field :xac_nhan %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<select name="xac-nhan">
+  <option value="Chờ xác nhận">Chờ xác nhận</option>
+  <option value="Cho phép">Cho phép</option>
+  <option value="Từ chối">Từ chối</option>
+</select>

@@ -1,40 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>User Tam Tru</h1>
+<h1>Đăng ký tạm trú</h1>
 
 <table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Ho va ten</th>
-      <th>Tu ngay</th>
-      <th>Den ngay</th>
-      <th>Dia chi</th>
-      <th>Li do</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ho va ten</th>
+            <th>Tu ngay</th>
+            <th>Den ngay</th>
+            <th>Dia chi</th>
+            <th>Li do</th>
+            <th>Trang thai</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% if Current.user.permision == 1 %>
-    <%# .find_by(nguoi_dan_id: '30') %>
-    <% @tam_trus_users.each do |tam_tru| %>
-      <tr>
-        <td><%= tam_tru.nguoi_dan_id %></td>
-        <td><%= tam_tru.NguoiDan.ten %></td>
-        <td><%= tam_tru.tu_ngay %></td>
-        <td><%= tam_tru.den_ngay %></td>
-        <td><%= tam_tru.dia_chi %></td>
-        <td><%= tam_tru.li_do %></td>
-        <td><%= link_to 'Show', tam_tru, class: 'btn btn-sm btn-primary' %></td>
-        <td><%= link_to 'Edit', edit_tam_tru_path(tam_tru), class: 'btn btn-sm btn-warning' %></td>
-        <td><%= link_to 'Destroy', tam_tru, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
-      </tr>
-      <% end %>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% if Current.user.permision == 1 %>
+        <% @tam_trus.each do |tam_tru| %>
+        <tr>
+            <td><%= tam_tru.nguoi_dan_id %></td>
+            <td><%= tam_tru.NguoiDan.ten %></td>
+            <td><%= tam_tru.tu_ngay %></td>
+            <td><%= tam_tru.den_ngay %></td>
+            <td><%= tam_tru.dia_chi %></td>
+            <td><%= tam_tru.li_do %></td>
+            <td><%= tam_tru.xac_nhan %></td>
+            <td><%= link_to 'Show', user_show_tam_tru_path(tam_tru), class: 'btn btn-sm btn-primary' %></td>
+            <td><%= link_to 'Edit', user_edit_tam_tru_path(tam_tru), class: 'btn btn-sm btn-warning' %></td>
+            <td><%= link_to 'Destroy', tam_tru, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+        </tr>
+        <% end %>
+        <% end %>
+    </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Tam Tru', new_tam_tru_path %>
+<%= link_to 'New Tam Tru', user_new_tam_tru_path %>

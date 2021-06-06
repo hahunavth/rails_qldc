@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "Home", home_index_path, class: "nav-link active" %>
+          <%= link_to "Trang chủ", home_index_path, class: "nav-link active" %>
         </li>
         <% if session[:user_id] %>
         <% if Current.user.permision == 0 %>

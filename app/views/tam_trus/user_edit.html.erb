@@ -1,6 +1,6 @@
-<h1>User Editing Tam Tru</h1>
+<h1>Sửa đăng ký tạm trú</h1>
 
-<%= render 'userform', tam_tru: @tam_trus_users %>
+<%= render 'userform', tam_tru: @tam_tru %>
 
-<%= link_to 'Xem', @tam_tru %> |
-<%= link_to 'Quay lại', user_tam_trus_path %>
+<%= link_to 'Xem', user_show_tam_tru_path(@tam_tru) %> |
+<%= link_to 'Quay lại', user_dang_ky_tam_tru_path %>

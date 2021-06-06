@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Thành viên trong hộ khẩu ID: <%= @ho_khau.id %></h1>
+
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Tên</th>
       <th>Biệt danh</th>
       <th>Số CMND</th>
@@ -39,6 +42,7 @@
     <% else %>
     <% @ho_khau.NguoiDan.each do |nguoi_dan| %>
       <tr>
+        <td><%= nguoi_dan.id %></td>
         <td><%= nguoi_dan.ten %></td>
         <td><%= nguoi_dan.biet_danh %></td>
         <td><%= nguoi_dan.so_cmnd %></td>

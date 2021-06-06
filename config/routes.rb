@@ -27,10 +27,13 @@ Rails.application.routes.draw do
 
   get 'user/dang_ky_tam_tru', to: 'tam_trus#user_index'
   get 'user/dang_ky_tam_tru/:id/edit', to: 'tam_trus#user_edit', as: 'user_edit_tam_tru'
-  get 'user/dang_ky_tam_tru/:id/show', to: 'tam_trus#user_show'
-  post 'user/dang_ky_tam_tru/:id/new', to: 'tam_trus#user_new'
+  get 'user/dang_ky_tam_tru/:id/show', to: 'tam_trus#user_show', as: 'user_show_tam_tru'
+  get 'user/dang_ky_tam_tru/new', to: 'tam_trus#user_new', as: 'user_new_tam_tru'
 
   get 'user/dang_ky_tam_vang', to: 'tam_vangs#user_index'
+  get 'user/dang_ky_tam_vang/:id/edit', to: 'tam_vangs#user_edit', as: 'user_edit_tam_vang'
+  get 'user/dang_ky_tam_vang/:id/show', to: 'tam_vangs#user_show', as: 'user_show_tam_vang'
+  get 'user/dang_ky_tam_vang/new', to: 'tam_vangs#user_new', as: 'user_new_tam_vang'
 
   get '/home/index'
   root to: 'home#index'
