@@ -20,7 +20,7 @@ class UserController < ApplicationController
     else
       @user.permision = 0
     end
-    if !User.where('name = ?', @user.name).any?
+    if !User.where('name = ?', @user.name).any? || !User.where('id = ?', @user.id).any? 
       if @user.save
         session[:user_id] = @user.id
         redirect_to root_path , notice: "Successfully create acount"
