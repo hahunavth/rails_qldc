@@ -24,7 +24,9 @@ class TamVangsController < ApplicationController
   # POST /tam_vangs or /tam_vangs.json
   def create
     @tam_vang = TamVang.new(tam_vang_params)
-
+    if Current.user
+      @tam_vang.nguoi_dan_id = NguoiDan.find_by_so_cmnd(Current.user.name).id
+    end
     respond_to do |format|
       if @tam_vang.save
         if Current.user.permision == 0

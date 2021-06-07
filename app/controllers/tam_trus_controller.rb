@@ -27,6 +27,9 @@ class TamTrusController < ApplicationController
 
     respond_to do |format|
       @tam_tru.xac_nhan = 'Chưa xác nhận'
+      if Current.user
+        @tam_tru.nguoi_dan_id = NguoiDan.find_by_so_cmnd(Current.user.name).id
+      end
       if @tam_tru.save
         if Current.user.permision == 0
           format.html { redirect_to @tam_tru, notice: "Tam tru was successfully created." }
