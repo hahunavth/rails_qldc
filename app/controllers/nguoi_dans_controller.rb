@@ -58,6 +58,9 @@ class NguoiDansController < ApplicationController
 
   # DELETE /nguoi_dans/1 or /nguoi_dans/1.json
   def destroy
+    nd_name = @nguoi_dan.so_cmnd
+    @user = User.find_by(name: nd_name)
+    @user.destroy
     @nguoi_dan.destroy
     respond_to do |format|
       format.html { redirect_to nguoi_dans_url, notice: "Nguoi dan was successfully destroyed." }
