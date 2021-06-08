@@ -12,15 +12,13 @@ class UserController < ApplicationController
     if is_number? @user.name
       @user.permision = 1
       if !NguoiDan.where('so_cmnd = ?', @user.name).any?
-        # redirect_to sign_up_path , alert: "Account is exists"
-        # render :sign_up
         @user.name = ''
         @user.password = ''
       end
     else
       @user.permision = 0
     end
-    if !User.where('name = ?', @user.name).any? || !User.where('id = ?', @user.id).any? 
+    if !User.where('name = ?', @user.name).any? || !User.where('id = ?', @user.id).any?
       if @user.save
         session[:user_id] = @user.id
         redirect_to root_path , notice: "Successfully create acount"

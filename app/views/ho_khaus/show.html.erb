@@ -1,18 +1,19 @@
 
-<p>
-  <strong>Địa chỉ:</strong>
-  <%= @ho_khau.dia_chi %>
-</p>
+<div class="list-group">
+  <p class='list-group-item mb-0'>
+    <strong>Địa chỉ:</strong>
+    <%= @ho_khau.dia_chi %>
+  </p>
 
-<p>
-  <strong>Ngày cấp:</strong>
-  <%= @ho_khau.ngay_cap %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Ngày cấp:</strong>
+    <%= @ho_khau.ngay_cap %>
+  </p>
 
-<p>
-  <strong>Nơi cấp:</strong>
-  <%= @ho_khau.noi_cap %>
-</p>
-
+  <p class='list-group-item mb-0'>
+    <strong>Nơi cấp:</strong>
+    <%= @ho_khau.noi_cap %>
+  </p>
+</div>
 <%= link_to 'Sửa', edit_ho_khau_path(@ho_khau) %> |
 <%= link_to 'Quay lại', ho_khaus_path %>

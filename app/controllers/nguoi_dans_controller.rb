@@ -60,7 +60,9 @@ class NguoiDansController < ApplicationController
   def destroy
     nd_name = @nguoi_dan.so_cmnd
     @user = User.find_by(name: nd_name)
-    @user.destroy
+    if @user
+      @user.destroy
+    end
     @nguoi_dan.destroy
     respond_to do |format|
       format.html { redirect_to nguoi_dans_url, notice: "Nguoi dan was successfully destroyed." }

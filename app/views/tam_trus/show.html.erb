@@ -1,28 +1,29 @@
+<div class="list-group">
+  <p class='list-group-item mb-0'>
+    <strong>Nguoi dan:</strong>
+    <%= @tam_tru.nguoi_dan_id %>
+  </p>
 
-<p>
-  <strong>Nguoi dan:</strong>
-  <%= @tam_tru.nguoi_dan_id %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Tu ngay:</strong>
+    <%= @tam_tru.tu_ngay %>
+  </p>
 
-<p>
-  <strong>Tu ngay:</strong>
-  <%= @tam_tru.tu_ngay %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Den ngay:</strong>
+    <%= @tam_tru.den_ngay %>
+  </p>
 
-<p>
-  <strong>Den ngay:</strong>
-  <%= @tam_tru.den_ngay %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Dia chi:</strong>
+    <%= @tam_tru.dia_chi %>
+  </p>
 
-<p>
-  <strong>Dia chi:</strong>
-  <%= @tam_tru.dia_chi %>
-</p>
-
-<p>
-  <strong>Li do:</strong>
-  <%= @tam_tru.li_do %>
-</p>
+  <p class='list-group-item mb-0'>
+    <strong>Li do:</strong>
+    <%= @tam_tru.li_do %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_tam_tru_path(@tam_tru) %> |
 <%= link_to 'Back', tam_trus_path %>

@@ -25,7 +25,9 @@ class TamVangsController < ApplicationController
   def create
     @tam_vang = TamVang.new(tam_vang_params)
     if Current.user
-      @tam_vang.nguoi_dan_id = NguoiDan.find_by_so_cmnd(Current.user.name).id
+      if  NguoiDan.find_by_so_cmnd(Current.user.name)
+        @tam_vang.nguoi_dan_id = NguoiDan.find_by_so_cmnd(Current.user.name).id
+      end
     end
     respond_to do |format|
       if @tam_vang.save
