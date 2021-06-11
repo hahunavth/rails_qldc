@@ -23,6 +23,16 @@
         <li class="nav-item">
           <%= link_to "Tạm vắng", tam_vangs_path, class: "nav-link active" %>
         </li>
+        <li class="nav-item" style="posision: relative">
+          <span class="nav-link active">
+            <%= link_to "Xac thuc tai khoan", xac_thuc_tai_khoan_path, class: "", style:"color: black; text-decoration: none"  %>
+              <% if User.where('trang_thai = ?', false).count > 0%>
+              <span class="badge rounded-pill bg-danger">
+                <%= User.where('trang_thai = ?', false).count %>
+              </span>
+              <% end %>
+          </span>
+        </li>
         <% else %>
         <li class="nav-item">
           <%= link_to "ĐK Tạm trú", user_dang_ky_tam_tru_path, class: "nav-link active" %>

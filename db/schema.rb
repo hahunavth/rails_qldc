@@ -69,6 +69,11 @@ ActiveRecord::Schema.define(version: 2021_06_04_220253) do
     t.string "name", null: false
     t.string "password_digest"
     t.integer "permision"
+    t.string "ho_va_ten"
+    t.string "email"
+    t.string "sdt"
+    t.string "dia_chi"
+    t.boolean "trang_thai", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

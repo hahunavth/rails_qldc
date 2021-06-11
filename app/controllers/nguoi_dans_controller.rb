@@ -1,5 +1,5 @@
 class NguoiDansController < ApplicationController
-  before_action :require_user_logged_in!
+  before_action :require_admin_logged_in!
 
   before_action :set_nguoi_dan, only: %i[ show edit update destroy ]
 

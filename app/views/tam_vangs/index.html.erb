@@ -11,7 +11,7 @@
       <th>Dia chi</th>
       <th>Li do</th>
       <th>Trạng thái</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -25,9 +25,14 @@
         <td><%= tam_vang.dia_chi %></td>
         <td><%= tam_vang.li_do %></td>
         <td><%= tam_vang.xac_nhan %></td>
-        <td><%= link_to 'Show', tam_vang, class: 'btn btn-sm btn-outline-primary' %></td>
-        <td><%= link_to 'Edit', edit_tam_vang_path(tam_vang), class: 'btn btn-sm btn-outline-warning' %></td>
-        <td><%= link_to 'Destroy', tam_vang, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %></td>
+        <td style="max-width: 50px"><%= link_to 'Show', tam_vang, class: 'btn btn-sm btn-outline-primary' %></td>
+        <td style="max-width: 50px"><%= link_to 'Edit', edit_tam_vang_path(tam_vang), class: 'btn btn-sm btn-outline-warning' %></td>
+        <td style="max-width: 60px"><%= link_to 'Destroy', tam_vang, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %></td>
+        <td style="max-width: 50px">
+          <div class="btn btn-sm btn-outline-secondary">
+            In
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'xac_thuc_tai_khoan/', to: 'user#xttk_index'
+  get 'xac_thuc_tai_khoan/:id/', to: 'user#xttk_show', as: 'xttk_show'
+  patch 'xac_thuc_tai_khoan/:id/', to: 'user#xttk_accept', as: 'xttk_accept'
+  delete 'xac_thuc_tai_khoan/:id/', to: 'user#xttk_reject', as: 'xttk_reject'
+
   get 'user_tam_tru/new'
   resources :tam_vangs
   resources :tam_trus

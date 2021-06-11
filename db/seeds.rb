@@ -12,8 +12,8 @@ NguoiDan.create(id: 1,ten: 'Admin', so_cmnd: '123456789', so_ho_khau: 1, qh_voi_
 NguoiDan.create(id: 2,ten: 'Nguyen Van B', so_cmnd: '030201001123', so_ho_khau: 1, qh_voi_chu_ho: 'Con')
 NguoiDan.create(id: 3,ten: 'Nguyen Van C', so_cmnd: '030201001122', so_ho_khau: 1, qh_voi_chu_ho: 'Cháu')
 
-User.create(id: 1,name: 'admin', password: '1', password_confirmation: '1', permision: 0 )
-User.create(id: 2,name: '030201001123', password: '1', password_confirmation: '1', permision: 1 )
+User.create(id: 1,name: 'admin', password: '1', password_confirmation: '1', permision: 0 , trang_thai:true)
+User.create(id: 2,name: '030201001123', password: '1', password_confirmation: '1', permision: 1, trang_thai: true )
 
 # TamTru.create(  id: 1, nguoi_dan_id: 3, tu_ngay: Sat, 05 Jun 2021, den_ngay: Sat, 05 Jun 2021, dia_chi: "Ha noi", li_do: "@@@", xac_nhan: nil )
 
