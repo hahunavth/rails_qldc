@@ -25,7 +25,9 @@ class UserController < ApplicationController
       render :sign_up
     else
       if @user.save
-        session[:user_id] = @user.id
+        if @user.permision == 0
+          session[:user_id] = @user.id
+        end 
         redirect_to root_path , notice: "Successfully create acount"
       else
         # flash[:alert] = "Something was wrong"
