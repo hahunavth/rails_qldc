@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   patch 'xac_thuc_tai_khoan/:id/', to: 'user#xttk_accept', as: 'xttk_accept'
   delete 'xac_thuc_tai_khoan/:id/', to: 'user#xttk_reject', as: 'xttk_reject'
 
+  patch 'tam_trus/:id/accept', to: 'tam_trus#accept', as: 'tam_tru_accept'
+  patch 'tam_trus/:id/reject', to: 'tam_trus#reject', as: 'tam_tru_reject'
+
   get 'user_tam_tru/new'
   resources :tam_vangs
   resources :tam_trus

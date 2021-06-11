@@ -1,7 +1,7 @@
 class TamTrusController < ApplicationController
   before_action :require_user_logged_in!
 
-  before_action :set_tam_tru, only: %i[ show edit update destroy user_show user_edit]
+  before_action :set_tam_tru, only: %i[ show edit update destroy user_show user_edit accept reject]
 
   # GET /tam_trus or /tam_trus.json
   def index
@@ -46,10 +46,45 @@ class TamTrusController < ApplicationController
     end
   end
 
+  def accept
+    @tam_tru = TamTru.where('id = ?', params[:id]).first
+    if @tam_tru
+      @tam_tru.xac_nhan = 'Cho phép'
+      if @tam_tru.update(tam_tru_params_2)
+        if Current.user.permision == 0
+           redirect_to @tam_tru, notice: "Đã cho phép yêu cầu. "
+        else
+          format.html { redirect_to user_show_tam_tru_url(@tam_tru), notice: "Tam tru was successfully updated." }
+        end
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @tam_tru.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def reject
+    @tam_tru = TamTru.where('id = ?', params[:id]).first
+    if @tam_tru
+      @tam_tru.xac_nhan = 'Từ chối'
+      if @tam_tru.update(tam_tru_params_2)
+        if Current.user.permision == 0
+           redirect_to tam_tru_path, alert: "Đã từ chối yêu cầu. "
+        else
+          format.html { redirect_to index_url(@tam_tru), notice: "Tam tru was successfully updated." }
+        end
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @tam_tru.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   # PATCH/PUT /tam_trus/1 or /tam_trus/1.json
   def update
     respond_to do |format|
-      if @tam_tru.update(tam_tru_params)
+      if @tam_tru.update(tam_tru_params_2)
         if Current.user.permision == 0
           format.html { redirect_to @tam_tru, notice: "Tam tru was successfully updated." }
         else
@@ -111,5 +146,9 @@ class TamTrusController < ApplicationController
     # Only allow a list of trusted parameters through.
     def tam_tru_params
       params.require(:tam_tru).permit(:nguoi_dan_id, :tu_ngay, :den_ngay, :dia_chi, :li_do, :xac_nhan)
+    end
+
+    def tam_tru_params_2
+      params.permit(:nguoi_dan_id, :tu_ngay, :den_ngay, :dia_chi, :li_do, :xac_nhan)
     end
 end

@@ -24,11 +24,19 @@
         <td><%= tam_tru.den_ngay %></td>
         <td><%= tam_tru.dia_chi %></td>
         <td><%= tam_tru.li_do %></td>
-        <td><%= tam_tru.xac_nhan %></td>
-        <td style="max-width: 50px"><%= link_to 'Show', tam_tru, class: 'btn btn-sm btn-outline-primary' %></td>
-        <td style="max-width: 50px"><%= link_to 'Edit', edit_tam_tru_path(tam_tru), class: 'btn btn-sm btn-outline-warning' %></td>
-        <td style="max-width: 50px"><%= link_to 'Destroy', tam_tru, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger px-0' %></td>
-        <td style="max-width: 50px">
+        <td>
+          <div class="badge bg-primary mt-1">
+            <%= tam_tru.xac_nhan %>
+          </div>
+        </td>
+        <td style="max-width: 60px"><%= link_to 'Show', tam_tru, class: 'btn btn-sm btn-outline-primary' %></td>
+        <td style="max-width: 70px">
+          <%= link_to 'Cho phép', tam_tru_accept_path(tam_tru), method: :patch, class: 'btn btn-sm btn-outline-warning' %>
+        </td>
+        <td style="max-width: 70px">
+          <%= link_to 'Từ chối', tam_tru_reject_path(tam_tru), method: :patch, class: 'btn btn-sm btn-outline-danger px-0' %>
+        </td>
+        <td style="max-width: 70px">
           <div class="btn btn-sm btn-outline-secondary">
             In
           </div>
